@@ -51,7 +51,8 @@ public class Part03StepVerifierTest {
 
 	@Test
 	public void expectElementsWithThenComplete() {
-		workshop.expectSkylerJesseComplete(Flux.just(new User("swhite", null, null), new User("jpinkman", null, null)));
+		// 这里不能为null，equals方法里面会报空指针异常
+		workshop.expectSkylerJesseComplete(Flux.just(new User("swhite", "", ""), new User("jpinkman", "", "")));
 	}
 
 //========================================================================================
